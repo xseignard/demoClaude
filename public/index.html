@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Claude mixer dans les internets</title>
+  <link rel="stylesheet" href="../bower_components/jquery-minicolors/jquery.minicolors.css">
+  <link rel="stylesheet" href="style/index.css">
+</head>
+<body>
+  
+  <div>
+    <h2>Claude mixer dans les internets</h2>
+    <div id="minicolors-holder">
+      <h2>Choose a color</h2>
+      <input type="hidden" id="minicolors-input" value="#cc2929">
+    </div>
+    <div id="name">
+      <h2>Send a word</h2>
+      <input id="input-name" type="text" value="">
+      <button id="send-name">Send your name</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="../bower_components/jquery/jquery.min.js"></script>
+  <script src="../bower_components/jquery-minicolors/jquery.minicolors.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
