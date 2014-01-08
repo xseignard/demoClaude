@@ -2,7 +2,8 @@ var express = require('express'),
     app = express(),
     V4PortReceive = 5000,
     V4PortSend = 5001,
-    V4Ip = '82.235.242.164',
+    //V4Ip = '82.235.242.164',
+    V4Ip = '192.168.0.11',
     dgram = require('dgram'),
     clients = {},
     server = require('http').createServer(app),
@@ -42,7 +43,8 @@ io.sockets.on('connection', function (socket) {
           jsonObject.MessageData[key] = msg[key];
         }
         // stringify and send
-        var jsonString = JSON.stringify(jsonObject);
+        //var jsonString = JSON.stringify(jsonObject);
+        var jsonString = msg.x + ',' + msg.y + ',' + msg.z;
         console.log(jsonString);
         UDPSend(jsonString,V4Ip,V4PortReceive)
     });

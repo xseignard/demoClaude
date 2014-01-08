@@ -5,6 +5,20 @@
 		btn = $('#send-name'),
 		name = $('#input-name')[0];
     
+
+    window.addEventListener('deviceorientation', function(event) {
+      var msg = {x: event.beta, y:event.gamma, z:event.alpha};
+      socket.emit('message', msg);
+    }, false);
+    
+    /*document.body.addEventListener('touchmove', function(event) {
+        var touch = event.changedTouches[0];
+        var msg = {x: touch.pageX, y:touch.pageY};
+        console.log(msg);
+        socket.emit('message', msg);
+    }, false);*/
+
+    /*
     colorPicker.minicolors({
     	changeDelay: 10,
     	change: function(hex, opacity) {
@@ -20,6 +34,6 @@
     		socket.emit('message', {name: name.value});
     		name.value='';
     	}
-    });
+    });*/
 
 }($));
